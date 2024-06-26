@@ -78,30 +78,62 @@ The SIMS prediction for ARM=88 is 0.71, the predicting interval is (-1.73, 3.14)
 
 ## Model 2 SIM~GRIP
 
-### Now add in scatterplot
+### Descriptive results -- Scatterplot  
+
+```{r}
+plot(SIMS~GRIP,data=data)
+```
+What this scatter plot graph shows that GRIP strength increases 
 
 
 ### Numerical results 
 
 
+```{r}
+cor(SIMS~GRIP,data=data)
+```
+The correlation shows that Grip strength increases
+
+
+
 ### Inferential  (Build model.2)
+
+```{r}
+model.2 <- lm(SIMS~GRIP,data=data)
+summary.lm(model.2)
+```
   
+#### scatterplot with model fit
+
+```{r}
+plot(SIMS~GRIP,data=data)
+abline(model.2, col='red')
+```
 
 #### predict model.2 at target point
 
-#### now add the model fit to our plot for model.2
+```{r}
+newdata = data.frame(ARM =88, GRIP=94)
+predict(model.2, newdata, interval='pred')
+```
   
 
 
 ## Model 3 SIM~ARM+GRIP
+```{r}
+model.3 = lm(SIMS~ARM+GRIP, data = data)
+summary (model.3)
+```
 
-### Numerical results (cor)
-
-`
   
 ### Inferential  (Build 2-dimentional model.3)
 
 #### predict model.3 at target point
+
+```{r}
+newdata = data.frame(ARM =88, GRIP=94)
+predict(model.2, newdata, interval='pred')
+```
   
 
 ## Comparing nested models ANOVA Test
