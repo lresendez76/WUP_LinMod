@@ -33,11 +33,7 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 
 ## Model 1 SIM~ARMS
 
-### Descriptive results
-
-### Graphical result 
-
-### Scatterplot
+### Descriptive results -- Scatterplot  
 
 ```{r}
 plot(SIMS~ARM,data=data)
@@ -54,8 +50,27 @@ cor(SIMS~ARM,data=data)
 The correlation shows that Arm strength increases
 
 ### Inferential  (Build model.1)
+```{r}
+model.1 <- lm(SIMS~ARM,data=data)
+summary.lm(model.1)
+```
+#### scatterplot with model fit
+
+```{r}
+plot(SIMS~ARM,data=data)
+abline(model.1, col='red')
+```
+The P-values for the intercept and slope are 
+
 
 #### Predict at target point
+
+```{r}
+newdata = data.frame(ARM =88, GRIP=94)
+predict(model.1, newdata, interval='pred')
+```
+
+The SIMS prediction for ARM=88 is 0.71, the predicting interval is (-1.73, 3.14)
 
 
 #### scatterplot with model fit
