@@ -48,6 +48,10 @@ What this scatter plot graph shows that ARM strength increases
 
 ### Numerical results
 
+```{r}
+cor(SIMS~ARM,data=data)
+```
+The correlation shows that Arm strength increases
 
 ### Inferential  (Build model.1)
 
