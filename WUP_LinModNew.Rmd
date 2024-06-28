@@ -116,7 +116,7 @@ abline(model.2, col='red')
 newdata = data.frame(ARM =88, GRIP=94)
 predict(model.2, newdata, interval='pred')
 ```
-  
+  The SIMS prediction for ARM=88 is 0.5, the predicting interval is (-3.10, 2.0)
 
 
 ## Model 3 SIM~ARM+GRIP
@@ -124,7 +124,7 @@ predict(model.2, newdata, interval='pred')
 model.3 = lm(SIMS~ARM+GRIP, data = data)
 summary (model.3)
 ```
-
+  So we reject 0.00000000000000022
   
 ### Inferential  (Build 2-dimentional model.3)
 
@@ -132,7 +132,7 @@ summary (model.3)
 
 ```{r}
 newdata = data.frame(ARM =88, GRIP=94)
-predict(model.2, newdata, interval='pred')
+predict(model.3, newdata, interval='pred')
 ```
   
 
