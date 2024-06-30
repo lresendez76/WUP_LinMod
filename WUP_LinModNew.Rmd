@@ -60,7 +60,9 @@ summary.lm(model.1)
 plot(SIMS~ARM,data=data)
 abline(model.1, col='red')
 ```
-The P-values for the intercept and slope are 0.00000000000000022, So we reject the null because it is smaller than 0.05
+
+
+The P-values for the intercept and slope are 0.00000000000000022, So we reject the null because it is smaller than 0.05  
 
 
 #### Predict at target point
@@ -82,7 +84,9 @@ The SIMS prediction for ARM=88 is 0.7, the predicting interval is (-1.73, 3.14)
 ```{r}
 plot(SIMS~GRIP,data=data)
 ```
-What this scatter plot graph shows is that the more GRIP strength one has would make the simulation increases also.
+
+
+What this scatter plot graph shows is that the more GRIP strength one has would make the simulation increases also.  
 
 
 ### Numerical results 
@@ -108,7 +112,9 @@ summary.lm(model.2)
 plot(SIMS~GRIP,data=data)
 abline(model.2, col='red')
 ```
-This p-value for the interceptor and slope are 0.00000000000000022
+
+
+This p-value for the interceptor and slope are 0.00000000000000022  
 
 
 #### predict model.2 at target point
